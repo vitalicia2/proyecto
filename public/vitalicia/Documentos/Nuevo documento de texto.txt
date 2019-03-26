@@ -1,0 +1,87 @@
+DELIMITER $$
+
+CREATE PROCEDURE `insertardepa` (IN `nomb` TEXT) BEGIN INSERT INTO departamento (nombre) VALUES (nomb); END$$
+
+DELIMITER ;
+
+--------------------------------------------------------------------------------------------
+
+DELIMITER $$
+
+CREATE PROCEDURE `insertarempleado` (IN `nombr` TEXT, IN `loca` TEXT, IN `telf` TEXT)  BEGIN
+    INSERT INTO empleados (nombre,localidad,telefono) VALUES (nombr,loca,telf);
+    
+END$$
+
+DELIMITER ;
+
+---------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+
+CREATE PROCEDURE `insertarencargado` (IN `ie` INT, IN `iss` INT, IN `ge` TEXT)  BEGIN
+    INSERT INTO encargado (id_emp,id_serv,grado_estudios) VALUES (ie,iss,ge);
+    
+END$$
+
+DELIMITER ;
+
+-------------------------------------------------------------------------------------------------------
+
+
+DELIMITER $$
+
+CREATE PROCEDURE `insertarencliente` (IN `nomb` VARCHAR(30), IN `app` VARCHAR(30), IN `apm` VARCHAR(30), IN `tel` VARCHAR(15), IN `ddir` VARCHAR(40), IN `eml` VARCHAR(35))  BEGIN
+    INSERT INTO cliente (nom,ap,am,tel,dir,em) VALUES (nomb,app,apm,tel,ddir,eml);
+    
+END$$
+
+DELIMITER ;
+
+----------------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+
+CREATE PROCEDURE `insertarservicios` (IN `nomb` TEXT, IN `iden` INT, IN `idden` INT, IN `idenc` INT)  BEGIN
+    INSERT INTO servicios(nombre,id,id_dep,id_enc) VALUES (nomb,iden,idden,idenc);
+    
+END$$
+
+DELIMITER ;
+
+----------------------------------------------------------------------------------------------------
+
+
+
+	u435473506_netit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

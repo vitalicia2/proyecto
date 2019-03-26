@@ -1,0 +1,45 @@
+[06-Nov-2018 23:00:59 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ';' or '{' in /home/vitalici/public_html/vendor/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php on line 265
+[11-Dec-2018 22:03:36 UTC] PHP Fatal error:  Uncaught ReflectionException: Class log does not exist in /home/vitalici/bootstrap/cache/compiled.php:1355
+Stack trace:
+#0 /home/vitalici/bootstrap/cache/compiled.php(1355): ReflectionClass->__construct('log')
+#1 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('log', Array)
+#2 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('log', Array)
+#3 /home/vitalici/bootstrap/cache/compiled.php(1410): Illuminate\Foundation\Application->make('log')
+#4 /home/vitalici/bootstrap/cache/compiled.php(1387): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 /home/vitalici/bootstrap/cache/compiled.php(1373): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('App\\Exceptions\\...', Array)
+#7 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('App\\Exceptions\\...', Array)
+#8 /home/vita in /home/vitalici/bootstrap/cache/compiled.php on line 1355
+[11-Dec-2018 22:03:40 UTC] PHP Fatal error:  Uncaught ReflectionException: Class log does not exist in /home/vitalici/bootstrap/cache/compiled.php:1355
+Stack trace:
+#0 /home/vitalici/bootstrap/cache/compiled.php(1355): ReflectionClass->__construct('log')
+#1 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('log', Array)
+#2 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('log', Array)
+#3 /home/vitalici/bootstrap/cache/compiled.php(1410): Illuminate\Foundation\Application->make('log')
+#4 /home/vitalici/bootstrap/cache/compiled.php(1387): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 /home/vitalici/bootstrap/cache/compiled.php(1373): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('App\\Exceptions\\...', Array)
+#7 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('App\\Exceptions\\...', Array)
+#8 /home/vita in /home/vitalici/bootstrap/cache/compiled.php on line 1355
+[11-Dec-2018 22:03:41 UTC] PHP Fatal error:  Uncaught ReflectionException: Class log does not exist in /home/vitalici/bootstrap/cache/compiled.php:1355
+Stack trace:
+#0 /home/vitalici/bootstrap/cache/compiled.php(1355): ReflectionClass->__construct('log')
+#1 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('log', Array)
+#2 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('log', Array)
+#3 /home/vitalici/bootstrap/cache/compiled.php(1410): Illuminate\Foundation\Application->make('log')
+#4 /home/vitalici/bootstrap/cache/compiled.php(1387): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 /home/vitalici/bootstrap/cache/compiled.php(1373): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('App\\Exceptions\\...', Array)
+#7 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('App\\Exceptions\\...', Array)
+#8 /home/vita in /home/vitalici/bootstrap/cache/compiled.php on line 1355
+[11-Dec-2018 22:03:44 UTC] PHP Fatal error:  Uncaught ReflectionException: Class log does not exist in /home/vitalici/bootstrap/cache/compiled.php:1355
+Stack trace:
+#0 /home/vitalici/bootstrap/cache/compiled.php(1355): ReflectionClass->__construct('log')
+#1 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('log', Array)
+#2 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('log', Array)
+#3 /home/vitalici/bootstrap/cache/compiled.php(1410): Illuminate\Foundation\Application->make('log')
+#4 /home/vitalici/bootstrap/cache/compiled.php(1387): Illuminate\Container\Container->resolveClass(Object(ReflectionParameter))
+#5 /home/vitalici/bootstrap/cache/compiled.php(1373): Illuminate\Container\Container->getDependencies(Array, Array)
+#6 /home/vitalici/bootstrap/cache/compiled.php(1309): Illuminate\Container\Container->build('App\\Exceptions\\...', Array)
+#7 /home/vitalici/bootstrap/cache/compiled.php(1874): Illuminate\Container\Container->make('App\\Exceptions\\...', Array)
+#8 /home/vita in /home/vitalici/bootstrap/cache/compiled.php on line 1355
