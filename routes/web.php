@@ -140,6 +140,10 @@ Route::get('/dade','modulos@dade')->name('dade');
 
 Route::get('/guardatosdel','modulos@guardatosdel')->name('guardatosdel');
 
+// para el pdf
+
+	
+Route::get('pdf', 'modulos@invoice');
 
 
 
