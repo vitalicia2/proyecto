@@ -42,6 +42,7 @@ $('#idpa3').hide();
 $('#idpa4').hide();
 $('#tipa').hide();
 $('.obser').hide();
+$('#capa').hide();
        
     
       
@@ -110,6 +111,18 @@ $('.obser').hide();
         
         $("#agrega").click(function() {
         $("#guard").load('{{url('guardatosdel')}}' + '?' + $(this).closest('form').serialize());
+     //   $("#capa").load('{{url('imprimir')}}');
+         
+
+        
+            $('#capa').show("");
+
+        
+ 
+       });
+
+       $("#limpia").click(function() {
+
         var id;
             id= parseInt($("#ida").val()); //
             $('#ida').val(id + 1);
@@ -126,6 +139,8 @@ $('.obser').hide();
             $('#ale').val("");
             $('#obs').val("");
 
+            
+
             $('#idpapi').hide();
             $('#idpa').hide();
             $('#idpa1').hide();
@@ -134,13 +149,16 @@ $('.obser').hide();
             $('#idpa4').hide();
             $('#tipa').hide();
             $('.obser').hide();
- 
-       });
-         
-  
+            $('#capa').hide("");
 
         
-      });
+         
+      
+
+    });
+
+  });
+
         
         
         
@@ -266,16 +284,26 @@ $('.obser').hide();
   </div>  
   </div>  
         
-  <br>
-  <h3> Imprimir certificado  <input type=image src="../public/pdf.png" width="70" height="70"> </h3>
   
   <br>
       <button type="button" class="button"  name = "agrega" id="agrega" >Guardar</button>
   <br>
-  </div>
-            <div id="guard">
 
-            </div>
+  <div id="guard">
+
+   </div>
+
+  <div id="capa">
+
+  <h5>Descargar Reporte: <a class="hollow button alert" href="{{ route('reporte') }}" id="limpia"><img src="../public/pdf.png" width="30" height="30" id="limpia" /></a></h5>
+
+  
+  </div>
+
+	<br>
+
+  </div>
+           
 </form>
 @stop
        

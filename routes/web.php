@@ -140,10 +140,22 @@ Route::get('/dade','modulos@dade')->name('dade');
 
 Route::get('/guardatosdel','modulos@guardatosdel')->name('guardatosdel');
 
-// para el pdf
+// para el pdf de prueba
 
 	
 Route::get('pdf', 'modulos@invoice');
+
+
+//  ruta para el reporte
+
+
+Route::get('reporte', 'modulos@reporte')->name('reporte');
+
+Route::get('imprimir', 'modulos@imprimir')->name('imprimir');
+
+
+
+
 
 
 

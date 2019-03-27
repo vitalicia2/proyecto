@@ -9,6 +9,7 @@ use App\Http\Requests\formValidation;
 use App\cuidadores;
 use App\datosdetalles;
 use App\detalles;
+use App\datotes;
 use Session;
 
 
@@ -153,16 +154,29 @@ class modulos extends Controller
             $detalles->save();
         }
           
-         
+        $resultado=\DB::table('datotes')
+
+        ->select(['ida','licenciada','fecha','hora','paciente','edad'])->where('ida',$request->ida)->get();
+    
+      /*  ->where('folio',$request->ida)
+    
+        $view =  \View::make('vitalicia.reporte', compact('resultado'))->render();
+    
+        $pdf = \App::make('dompdf.wrapper');
+    
+        $pdf->loadHTML($view);
+        
+        return $pdf->stream('informe'.'.pdf');*/
+    
             
        
         
 
       
-      echo "$datos"."<br>";
-      echo "$detalles"."<br>";
-       //return view ('listap')
-      // ->with('resultado',$resultado)
+     // echo "$datos"."<br>";
+    //  echo "$detalles"."<br>";
+  //  return view ('vitalicia.reporte')
+   // ->with('resultado',$resultado);
       // ->with('resultado2',$resultado2[0]);
     }
 
@@ -191,12 +205,62 @@ class modulos extends Controller
         return $data;
     }
 
-    public function dat() 
+
+    public function reporte(Request $request) 
+    {
+
+ 
+
+   /* $resultado=\DB::select("SELECT de.`ida` AS 'folio',cui.`nombre`AS 'licenciada',de.`fecha`,de.`hora`,dt.`paciente`,
+    dt.`edad`,dt.`sexo`,dt.`talla`,dt.`peso`,dt.`ta`,dt.`fc`,dt.`fr`,dt.`grupsan` AS 'gruposanguineo',
+    dt.`aguvi` AS 'agudezavisual',dt.`alergia`,dt.`tipalergia`,dt.`observaciones`
+    FROM datosdetalles AS dt
+    INNER JOIN detalles AS de ON de.`ida` = dt.`ida`
+    INNER JOIN cuidadores AS cui ON cui.`idcuidador`=de.`idcuidador`");*/
+
+  /*  $resultado=\DB::select("SELECT de.`ida` AS 'folio',cui.`nombre`AS 'licenciada',de.`fecha`,de.`hora`,dt.`paciente`,
+    dt.`edad`,dt.`sexo`,dt.`talla`,dt.`peso`,dt.`ta`,dt.`fc`,dt.`fr`,dt.`grupsan` AS 'gruposanguineo',
+    dt.`aguvi` AS 'agudezavisual',dt.`alergia`,dt.`tipalergia`,dt.`observaciones`
+    FROM datosdetalles AS dt, detalles AS de, cuidadores AS cui
+    WHERE de.`ida`=dt.`ida`
+    AND   cui.`idcuidador`=de.`idcuidador`");*/
+    
+  //  $view =  \View::make('vitalicia.pdf')->with('resultado',$resultado)->render();
+
+    //$resultado=\DB::table('datosdetalles')
+
+   // ->select(['ida','paciente','edad','sexo','talla','peso'])->get();
+
+  //  $view =  \View::make('vitalicia.reporte', compact('resultado'))->render();
+
+    $resultado=\DB::table('datotes')
+
+    ->select(['ida','licenciada','fecha','hora','paciente','edad'])->get();
+
+  //  ->where('folio',$request->ida)
+
+    $view =  \View::make('vitalicia.pdf', compact('resultado'))->render();
+
+    $pdf = \App::make('dompdf.wrapper');
+
+    $pdf->loadHTML($view);
+    
+  //  return $pdf->stream('informe'.'.pdf');  mostrar el pdf en pantalla
+
+    return $pdf->download('informe'.'.pdf');  // descargar el pdf
+    
+ 
+
+    //echo "$resultado";
+
+    }
+
+    function imprimir()
     {
         
-
-        $data = datosdetalles::all();
-        return $data;
+        return view ('vitalicia.reporte');
+    
     }
+
 }
 
