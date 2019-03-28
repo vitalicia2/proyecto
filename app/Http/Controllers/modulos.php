@@ -227,11 +227,6 @@ class modulos extends Controller
     
   //  $view =  \View::make('vitalicia.pdf')->with('resultado',$resultado)->render();
 
-    //$resultado=\DB::table('datosdetalles')
-
-   // ->select(['ida','paciente','edad','sexo','talla','peso'])->get();
-
-  //  $view =  \View::make('vitalicia.reporte', compact('resultado'))->render();
 
     $resultado=\DB::table('datotes')
 
