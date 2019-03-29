@@ -30,13 +30,12 @@
 
   <body>
 
-   <!-- <main>
+    <main>
       <div id="details" class="clearfix">
         <div id="invoice">
-          <h1>INVOICE </h1>
-          <div class="date">Date of Invoice: </div>
+          <h1>Datos Generales del Paciente </h1>
         </div>
-      </div>-->
+      </div>
 
 
         <table id="customers">
