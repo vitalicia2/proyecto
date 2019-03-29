@@ -154,21 +154,7 @@ class modulos extends Controller
             $detalles->save();
         }
           
-        $resultado=\DB::table('datotes')
-
-        ->select(['ida','licenciada','fecha','hora','paciente','edad'])->where('ida',$request->ida)->get();
-    
-      /*  ->where('folio',$request->ida)
-    
-        $view =  \View::make('vitalicia.reporte', compact('resultado'))->render();
-    
-        $pdf = \App::make('dompdf.wrapper');
-    
-        $pdf->loadHTML($view);
-        
-        return $pdf->stream('informe'.'.pdf');*/
-    
-            
+      
        
         
 
@@ -216,7 +202,8 @@ class modulos extends Controller
     dt.`aguvi` AS 'agudezavisual',dt.`alergia`,dt.`tipalergia`,dt.`observaciones`
     FROM datosdetalles AS dt
     INNER JOIN detalles AS de ON de.`ida` = dt.`ida`
-    INNER JOIN cuidadores AS cui ON cui.`idcuidador`=de.`idcuidador`");*/
+    INNER JOIN cuidadores AS cui ON cui.`idcuidador`=de.`idcuidador`
+    ORDER BY de.`ida` DESC LIMIT 1);*/
 
   /*  $resultado=\DB::select("SELECT de.`ida` AS 'folio',cui.`nombre`AS 'licenciada',de.`fecha`,de.`hora`,dt.`paciente`,
     dt.`edad`,dt.`sexo`,dt.`talla`,dt.`peso`,dt.`ta`,dt.`fc`,dt.`fr`,dt.`grupsan` AS 'gruposanguineo',
@@ -227,12 +214,23 @@ class modulos extends Controller
     
   //  $view =  \View::make('vitalicia.pdf')->with('resultado',$resultado)->render();
 
+    //$resultado=\DB::table('datosdetalles')
 
-    $resultado=\DB::table('datotes')
+   // ->select(['ida','paciente','edad','sexo','talla','peso'])->get();
 
-    ->select(['ida','licenciada','fecha','hora','paciente','edad'])->get();
+  //  $view =  \View::make('vitalicia.reporte', compact('resultado'))->render();
 
-  //  ->where('folio',$request->ida)
+  //  $resultado=\DB::table('datotes')
+
+  //  ->select(['ida','licenciada','fecha','hora','paciente','edad'])->get();
+
+    $resultado=\DB::select("SELECT de.`ida`,cui.`nombre`AS 'licenciada',de.`fecha`,de.`hora`,dt.`paciente`,
+    dt.`edad`,dt.`sexo`,dt.`talla`,dt.`peso`,dt.`ta`,dt.`fc`,dt.`fr`,dt.`grupsan` AS 'gruposanguineo',
+    dt.`aguvi` AS 'agudezavisual',dt.`alergia`,dt.`tipalergia`,dt.`observaciones`
+    FROM datosdetalles AS dt
+    INNER JOIN detalles AS de ON de.`ida` = dt.`ida`
+    INNER JOIN cuidadores AS cui ON cui.`idcuidador`=de.`idcuidador`
+    ORDER BY de.`ida` DESC LIMIT 1");
 
     $view =  \View::make('vitalicia.pdf', compact('resultado'))->render();
 
@@ -244,9 +242,7 @@ class modulos extends Controller
 
     return $pdf->download('informe'.'.pdf');  // descargar el pdf
     
- 
 
-    //echo "$resultado";
 
     }
 
