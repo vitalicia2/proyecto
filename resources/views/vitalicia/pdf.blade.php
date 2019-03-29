@@ -37,21 +37,24 @@
         </div>
       </div>
 
+        @foreach($resultado as $res)
+
+        <p>   Folio:  {{$res->ida}} </p>
+
 
         <table id="customers">
 
         <tr>
 
 
-       <th>Folio</th> <th>Licenciado(a)</th> <th>Fecha</th> <th>Hora</th> <th>Paciente</th> <th>Edad</th>
+        <th>Licenciado(a)</th> <th>Fecha</th> <th>Hora</th> <th>Paciente</th> <th>Edad</th>
 
         </tr>
 
 
-        @foreach($resultado as $res)
+       
         <tr>
        
-        <td>{{$res->ida}}</td>
         <td>{{$res->licenciada}}</td>
         <td>{{$res->fecha}}</td>
         <td>{{$res->hora}}</td>
