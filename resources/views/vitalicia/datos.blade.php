@@ -201,7 +201,9 @@ $('#capa').hide();
   <div class="grid-3">
   <div></div>
   <div id="idpapi">
-  <b>* Paciente: <input type='text' name='paciente' id='paciente' value='' ></b>
+  <b>* Paciente: 
+  <input type="text" style="text-transform:uppercase;" value=""  name='paciente' id='paciente' onkeyup="javascript:this.value=this.value.toUpperCase();">
+  </b>
   </div>
   </div> 
   
