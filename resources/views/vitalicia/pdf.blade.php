@@ -41,13 +41,18 @@
 
         <p>   Folio:  {{$res->ida}} </p>
 
+        
+
+        <p> Licenciado(a):  {{$res->licenciada}} </p>
+
+
 
         <table id="customers">
 
         <tr>
 
 
-        <th>Licenciado(a)</th> <th>Fecha</th> <th>Hora</th> <th>Paciente</th> <th>Edad</th>
+        <th>Fecha</th> <th>Hora</th> <th>Paciente</th> <th>Edad</th>
 
         </tr>
 
@@ -55,7 +60,7 @@
        
         <tr>
        
-        <td>{{$res->licenciada}}</td>
+   
         <td>{{$res->fecha}}</td>
         <td>{{$res->hora}}</td>
         <td>{{$res->paciente}}</td>
