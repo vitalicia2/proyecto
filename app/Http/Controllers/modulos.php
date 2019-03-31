@@ -11,7 +11,7 @@ use App\datosdetalles;
 use App\detalles;
 use App\datotes;
 use Session;
-
+use Carbon\Carbon;
 
 
 
@@ -56,6 +56,13 @@ class modulos extends Controller
         if( Session::get('sesionidu')!="")
 		 {
 
+        $date = Carbon::now();
+        $date = $date->format('Y-m-d');
+        $time = Carbon::now();
+        $time = $time->format('h:i:s A');
+
+
+
          $clavequesigue = detalles::orderBy('ida','desc')
 								->take(1)->get();
          $cuantos = count($clavequesigue);
@@ -71,6 +78,8 @@ class modulos extends Controller
           $cuida = cuidadores::all();
           return view('vitalicia.datos')
           ->with('cuida',$cuida)
+          ->with('date',$date)
+          ->with('time',$time)
           ->with('ida',$ida);
     }
         else

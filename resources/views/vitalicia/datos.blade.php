@@ -23,6 +23,8 @@ $fecha=date("Y/n/j");
 
 ?>
 
+
+
 <script type="text/javascript">
 $(document).ready(function(){
  
@@ -171,12 +173,13 @@ $('#capa').hide();
   <div></div>
   <div>Hora 
           
-          <input type = 'time' name = 'hora' id="hora" value="{{$hora }}" readonly = 'readonly'>
+          <input type = 'text' name = 'hora' id="hora" value="{{$time}}" readonly = 'readonly'>
   </div>
-
+  
   <div> Fecha 
          
-          <input type = 'text' name = 'fecha' id="fecha" value="{{$fecha}}" readonly = 'readonly'>
+          <input type = 'date' name = 'fecha' id="fecha" value="{{$date}}" readonly = 'readonly'>
+      
   </div>  
   </div>
             
