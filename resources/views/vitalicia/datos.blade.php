@@ -170,12 +170,12 @@ $('#capa').hide();
   <div class="grid-container">
   <div></div>
   <div>Hora 
-          <br>{!! $errors->first('','<span class=error>:message</span>')!!}
+          
           <input type = 'time' name = 'hora' id="hora" value="{{$hora }}" readonly = 'readonly'>
   </div>
 
   <div> Fecha 
-          <br>{!! $errors->first('','<span class=error>:message</span>')!!}
+         
           <input type = 'text' name = 'fecha' id="fecha" value="{{$fecha}}" readonly = 'readonly'>
   </div>  
   </div>
