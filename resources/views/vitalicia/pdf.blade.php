@@ -3,18 +3,24 @@
 <html>
 <head>
 
+
+
 </head>
+
 <style>
   #header h3 { display:inline; }
 </style>
 
+<style>
+  #header h1 { display:inline; }
+</style>
 
 <style>
 div.round1 {
-  width: 500px;
+  width: 510px;
   padding: 10px;
   border: 5px solid gray;
-  margin: 0;
+  margin: 70;
 }
 </style>
  
@@ -24,22 +30,22 @@ div.round1 {
    <div align="right">    <b>Folio: {{$res->ida}} </b> </div>
 
   <h5> <img src="vitalicia.jpg" width="240" height="100" alt="Vitalicia">
-  Aviso de privacidad / Copyright / © Derechos reservados  2018 | Vitalicia.</h5>
+  <font color="#5B696A">Aviso de privacidad / Copyright / © Derechos reservados  2019 | Vitalicia.</font></h5>
 
-<div align="center">
-    <font color="#A569BD"><h1>Datos Generales del Paciente</h1></font>     
+<div id="header" >
+<font color="#A569BD"><h1>Datos Generales del Paciente </font> </h1><font color="#E8BFF0"><h3> Vitalicia</h3> </font>    
 </div>
 
 <div align="right">
         <label> {{$date}}</label><hr>
   </div>
-<br>
-      
+     
+
       <div  class="round1">
 
       <div id="header" >
 
-      <h3><font color="#A569BD"> PACIENTE:</font></h3> <label> {{$res->paciente}} </label>
+      <h3><font color="#A569BD"> Paciente:</font></h3> <label> {{$res->paciente}} </label>
 
       </div>
       <br>
@@ -56,7 +62,7 @@ div.round1 {
 
       <h3><font color="#A569BD"> Talla:</font></h3> <label>  {{$res->talla}} </label>
 
-      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
       <h3><font color="#A569BD"> Peso:</font></h3> <label>  {{$res->peso}} </label>
 
@@ -82,7 +88,7 @@ div.round1 {
 
       <h3><font color="#A569BD"> Grupo Sanguineo:</font></h3> <label>  {{$res->gruposanguineo}} </label>
 
-      &nbsp;
+      &nbsp;&nbsp;
 
       <h3><font color="#A569BD"> Agudeza Visual:</font></h3> <label>  {{$res->agudezavisual}} </label>
 
@@ -101,23 +107,48 @@ div.round1 {
       <br> <br>
 
       <h3><font color="#A569BD"> Observaciones:</font></h3> <label>  {{$res->observaciones}} </label> 
+      
+      </div>
+      <br>
+
+      <div id="header" >
+
+      <h3><font color="#A569BD"> Atendio:</font></h3> <label>  {{$res->licenciada}} </label>
+      <hr align="center"   height="1" width="30%" noshade="noshade" />
+
+      @endforeach
+
+      <div align="center">
+
+      <h3><font color="#A569BD">Firma</font></h3>
 
       </div>
+
       </div>
+      
+      </div>
+
+      <div align="center">
+
+      <h5><font color="#5B696A">Dirección: Jos&eacute; Vicente Villada Pte. 614, San Francisco, San Mateo Atenco, CP 52104 Tel&eacute;fono: (729) 149 6992<</h5></font>
+               
+      <p>Copyright &reg; 2019 | Vitalicia</p> 
+
+      </div>
+
+
+
+   
+
+      
 
  
 
-        
-
-        
-
+   
+      
+          
+                 
  
-
-
-        @endforeach
-
-
-
 
       
   </body>

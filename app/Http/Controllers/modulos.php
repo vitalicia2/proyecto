@@ -109,7 +109,7 @@ class modulos extends Controller
             }
             else
             {
-                $exist = "Ninguna";
+                $exist = "NINGUNA";
             }
 
 	

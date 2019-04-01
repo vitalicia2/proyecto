@@ -2,7 +2,9 @@
 @extends('vitalicia.machote')
 @section('encabezado')
 <hr>
-<font color="D133FF"><h1>Datos Generales</h1></font>
+<h2 class="subheader">Datos Generales <small>Vitalicia</small></h2>
+
+
 <hr>
 @stop
 @section('contenido')
