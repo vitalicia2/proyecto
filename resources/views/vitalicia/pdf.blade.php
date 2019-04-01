@@ -62,7 +62,7 @@ div.round1 {
 
       <h3><font color="#A569BD"> Talla:</font></h3> <label>  {{$res->talla}} </label>
 
-      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 
       <h3><font color="#A569BD"> Peso:</font></h3> <label>  {{$res->peso}} </label>
 
