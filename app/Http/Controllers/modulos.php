@@ -12,6 +12,7 @@ use App\detalles;
 use App\datotes;
 use Session;
 use Carbon\Carbon;
+use Jenssegers\Date\Date;
 
 
 
@@ -60,8 +61,6 @@ class modulos extends Controller
         $date = $date->format('Y-m-d');
         $time = Carbon::now();
         $time = $time->format('h:i:s A');
-
-
 
          $clavequesigue = detalles::orderBy('ida','desc')
 								->take(1)->get();
@@ -242,13 +241,16 @@ class modulos extends Controller
     INNER JOIN cuidadores AS cui ON cui.`idcuidador`=de.`idcuidador`
     ORDER BY de.`ida` DESC LIMIT 1");
 
-    $view =  \View::make('vitalicia.pdf', compact('resultado'))->render();
+    $date = Carbon::now();
+    $date = $date->format('l jS \\of F Y h:i:s A');
+
+    $view =  \View::make('vitalicia.pdf', compact('resultado','date'))->render();
 
     $pdf = \App::make('dompdf.wrapper');
 
     $pdf->loadHTML($view);
     
-  //  return $pdf->stream('informe'.'.pdf');  mostrar el pdf en pantalla
+  //  return $pdf->stream('informe'.'.pdf'); // mostrar el pdf en pantalla
 
     return $pdf->download('informe'.'.pdf');  // descargar el pdf
     
