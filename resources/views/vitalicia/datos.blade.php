@@ -81,7 +81,8 @@ $('#capa').hide();
         {
           $("#idpa").hide(); 
           $("#va1").hide();
-          $('#va3').hide();     
+          $('#va3').hide();
+          $('#va5').hide();      
         }
         
 
@@ -183,7 +184,7 @@ $('#capa').hide();
 
       $("#talla").keyup(function() {  
           
-          if ($("#talla").val().match(/^[0-9][.][0-9]{2}$/))
+          if ($("#talla").val().match(/^[0-3][.][0-9]{2}$/))
           {
             $('#peso').prop("disabled",false);
             $('#va3').hide();     
@@ -192,7 +193,7 @@ $('#capa').hide();
           {
             $('#peso').prop("disabled",true);
             $('#va3').show();
-            $('#va3').html('<small style="color:red;">El campo debe ser una medida! </small>')     
+            $('#va3').html('<small style="color:red;">El valor debe de ser una "Estatura real" </small>')     
           }
           if ($("#talla").val() == "")
           {
@@ -248,7 +249,8 @@ $('#capa').hide();
           {
             
             $('#idpa4').hide(); 
-            $('#va4').hide();     
+            $('#va4').hide();
+                 
           }
           
           
@@ -267,6 +269,9 @@ $('#capa').hide();
         
         $('#tipa').show();
         $('.obser').show();
+        $('#ale').val("");
+        $('#obs').val("");   
+        
       //  $('#ob').remove();
 
       break;
@@ -274,11 +279,76 @@ $('#capa').hide();
 
        $('#tipa').hide();
        $('.obser').show();
+       $('#obs').val(""); 
      //$('#al').remove();
       break;
 
           }
         });
+
+        //al teclear se haca una validacion y te muestra o no los siguientes campos
+
+        $("#ale").keyup(function() {  
+          
+          if ($("#ale").val() !="")
+          {
+            $('#va5').show();  
+            $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>')   
+          }
+          else
+          {
+            $('#agrega').prop("disabled",true);
+            $('#va5').show();     
+            $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>')     
+          }
+          if ($("#obs").val() !="")
+          {
+            $('#va5').hide();
+            $('#agrega').prop("disabled",false);  
+              
+          }
+          if ($("#ale").val() =="")
+          {
+            $('#va5').show();
+            $('#agrega').prop("disabled",true);
+            $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>')   
+              
+          }
+          
+          
+          
+          
+      });
+
+
+          //al teclear se haca una validacion y te muestra o no los siguientes campos
+
+        $("#obs").keyup(function() {  
+          
+          if ($("#obs").val() !="")
+          {
+            $('#agrega').prop("disabled",false); 
+            $('#va5').hide();  
+          }
+          else
+          {
+            $('#agrega').prop("disabled",true);
+            $('#va5').show();   
+            $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>')     
+          }
+          if ($("#ale").val() =="")
+          {
+            $('#agrega').prop("disabled",true); 
+            $('#va5').show();
+            $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>') 
+             
+              
+          }
+          
+          
+      });
+
+        
 
      //al dar click se carga la funcion de guardar los datos y te muestra el boton pdf
     
@@ -455,7 +525,7 @@ $('#capa').hide();
   <input type="radio" name="alergia" value="Si" id="aler1" >Si
   &nbsp;&nbsp;&nbsp;&nbsp;    
   <input type="radio" name="alergia" value="No" id="aler2" >No
-  </div>                         
+                        
    
   <div class="grid-7">
   <div></div>
@@ -469,11 +539,15 @@ $('#capa').hide();
   <div class="obser">
   <div id='ob'><b>Observaciones:<textarea name='comentarios'  id="obs" rows='4' cols='40'placeholder="Escribe aquí tus comentarios"></textarea></b></div>          
   </div>  
-  </div>  
+  </div> 
+  </div>   
+
+  <div id="va5">
+  </div> 
         
   
   <br>
-      <button type="button" class="button"  name = "agrega" id="agrega" >Guardar</button>
+      <button type="button" class="button"  name = "agrega" id="agrega" disabled>Guardar</button>
   <br>
 
   <div id="guard">
