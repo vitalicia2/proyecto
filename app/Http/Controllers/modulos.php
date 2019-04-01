@@ -100,7 +100,7 @@ class modulos extends Controller
           
 		$cuantos = count($datos);
 
-
+    
 		 $exist = $request->alerg;
 
             if($exist!="")

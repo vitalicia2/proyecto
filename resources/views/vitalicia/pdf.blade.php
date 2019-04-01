@@ -3,7 +3,10 @@
 <html>
 <head>
 
+<meta charset="utf-8" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitalicia | Reporte</title>
 
 </head>
 
@@ -23,6 +26,8 @@ div.round1 {
   margin: 70;
 }
 </style>
+
+
  
   <body>
     @foreach($resultado as $res)
