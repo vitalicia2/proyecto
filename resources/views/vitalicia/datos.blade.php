@@ -37,7 +37,8 @@ $(document).ready(function(){
   var numStr = s.substr(0, decimalLength + posiciones)
   return Number(numStr)
 }
-    
+    // Ocultar los inputs antes de dar clic en en un cuidador
+
 $('#idpapi').hide();
 $('#idpa').hide();
 $('#idpa1').hide();
@@ -50,7 +51,8 @@ $('#capa').hide();
        
     
       
-      
+      // al dar click mostrar los primeros elementos a llenar
+
        $("#idc").click(function() {
        $('#idpapi').show(); 
        
@@ -60,12 +62,39 @@ $('#capa').hide();
       
        });
 
+      //al teclear se haca una validacion y te muestra o no los siguientes campos
 
-       $("#paciente").keyup(function() {
+          $("#paciente").keyup(function() {  
+          
+        if ($("#paciente").val().match(/^[A-ZÀÈÌÒÙÁÉÍÓÚñÑÜ_\s]+$/))
+        {
+          $("#idpa").show(); 
+          $("#va1").hide();    
+        }
+        else
+        {
+          $("#idpa").hide();
+          $("#va1").show(); 
+          $('#va1').html('<small style="color:red;">El campo debe ser solo "letras" </small>')      
+        }
+        if ($("#paciente").val() =="")
+        {
+          $("#idpa").hide(); 
+          $("#va1").hide();
+          $('#va3').hide();     
+        }
+        
 
-       $("#idpa").show();
+        });
 
-       });
+       
+
+       
+       //al teclear mostrar los siguientes campos a llenar
+
+       
+
+      //al teclear mostrar los siguientes campos a llenar
 
       $("#peso").keyup(function() {
   
@@ -75,6 +104,8 @@ $('#capa').hide();
       
        });
 
+      //al teclear mostrar los siguientes campos a llenar
+
       $("#fr").keyup(function() {
 
       $('#idpa2').show();
@@ -82,14 +113,152 @@ $('#capa').hide();
   
        });
 
+      //al teclear mostrar los siguientes campos a llenar
+
       $("#visual").keyup(function() {
 
       $('#idpa4').show();
 
       });
 
-     
+      
 
+      //al teclear se haca una validacion y te muestra o no los siguientes campos
+
+        $("#edad").keyup(function() {
+
+        var va2;
+            va2= parseInt($("#edad").val());
+        
+        if(va2 >14 && va2 <= 100 )
+        {
+          $('#sexo').prop("disabled",false);
+          $('#talla').prop("disabled",false);
+          $('#peso').prop("disabled",false);
+          $('#va3').hide(); 
+        }
+        else
+        {
+          $('#sexo').prop("disabled",true);
+          $('#talla').prop("disabled",true);
+          $('#peso').prop("disabled",true);
+          $('#va3').show();
+          $('#va3').html('<small style="color:red;">El campo debe ser solo numeros! y el rango de "Edad" permitido </small>')         
+        }
+        
+         
+        });
+
+      //al teclear se haca una validacion y te muestra o no los siguientes campos  
+
+      $("#sexo").keyup(function() {
+
+      var va3;
+          va3= $("#sexo").val();
+
+       
+      if(  va3 == "" )
+      {
+        $('#talla').prop("disabled",true);
+        $('#peso').prop("disabled",true);
+        $('#va3').hide();
+      }
+      else
+      {
+        $('#talla').prop("disabled",true);
+        $('#peso').prop("disabled",true);
+        $('#va3').show();
+        $('#va3').html('<small style="color:red;">El campo debe ser F "o" M solamente!</small>')
+      } 
+      if(va3 == "F" ||  va3 == "M" )
+      {
+        $('#talla').prop("disabled",false);
+        $('#peso').prop("disabled",false);
+        $('#va3').hide();  
+      }
+       
+      });
+
+      //al teclear se haca una validacion y te muestra o no los siguientes campos
+
+      $("#talla").keyup(function() {  
+          
+          if ($("#talla").val().match(/^[0-9][.][0-9]{2}$/))
+          {
+            $('#peso').prop("disabled",false);
+            $('#va3').hide();     
+          }
+          else
+          {
+            $('#peso').prop("disabled",true);
+            $('#va3').show();
+            $('#va3').html('<small style="color:red;">El campo debe ser una medida! </small>')     
+          }
+          if ($("#talla").val() == "")
+          {
+            $('#peso').prop("disabled",true);
+            $('#va3').hide();    
+          }
+          
+      }); 
+
+      //al teclear se haca una validacion y te muestra o no los siguientes campos
+
+      $("#peso").keyup(function() {  
+          
+          if ($("#peso").val().match(/^[0-9]{2,3}$/))
+          {
+            
+            $('#idpa1').show(); 
+            $('#va3').hide();     
+          }
+          else
+          {
+            $('#idpa1').hide();
+            $('#va3').show();  
+            $('#va3').html('<small style="color:red;">El valor debe ser "Dos o Tres  cifras Maximo" </small>')     
+          }
+          if ($("#peso").val() =="")
+          {
+            
+            $('#idpa1').hide(); 
+            $('#va3').hide();     
+          }
+          
+          
+      });
+
+      //al teclear se haca una validacion y te muestra o no los siguientes campos
+
+      $("#visual").keyup(function() {  
+          
+          if ($("#visual").val().match(/^[A-ZÀÈÌÒÙÁÉÍÓÚñÑÜ_\s]+$/))
+          {
+            
+            $('#idpa4').show(); 
+            $('#va4').hide();     
+          }
+          else
+          {
+            $('#idpa4').hide();
+            $('#va4').show();  
+            $('#va4').html('<small style="color:red;">El campo solo acepta letras </small>')     
+          }
+          if ($("#visual").val() =="")
+          {
+            
+            $('#idpa4').hide(); 
+            $('#va4').hide();     
+          }
+          
+          
+      });
+
+      
+
+
+
+     //al selecionar uno se valida si selecionas si o np en el radio button y te muestra alergias u observaciones  
     
       $("input[name=alergia]").click(function () {
       switch ($('input:radio[name=alergia]:checked').val()) { 
@@ -111,19 +280,19 @@ $('#capa').hide();
           }
         });
 
-
-        
+     //al dar click se carga la funcion de guardar los datos y te muestra el boton pdf
+    
         $("#agrega").click(function() {
         $("#guard").load('{{url('guardatosdel')}}' + '?' + $(this).closest('form').serialize());
      //   $("#capa").load('{{url('imprimir')}}');
          
-
-        
-            $('#capa').show("");
+        $('#capa').show("");
 
         
  
        });
+
+       //al dar click al boton pdf se limpian los campos llenados anteriormente y s eincrementa un id
 
        $("#limpia").click(function() {
 
@@ -210,18 +379,26 @@ $('#capa').hide();
   <input type="text" style="text-transform:uppercase;" value=""  name='paciente' id='paciente' onkeyup="javascript:this.value=this.value.toUpperCase();">
   </b>
   </div>
-  </div> 
+  </div>
+  
+  <div id=va1>
+
+  </div>
   
   <div id="idpa">
   <div class="grid-4">
   <div class="item1"></div>
-  <div class="item2"><b>* Edad: <input type='text' name='edad' id='edad'></b> </div>
-  <div class="item3"><b>* Sexo: <input type='text' name='sexo' id='sexo'></b> </div>  
-  <div class="item4"><b>* Talla: <input type='text' name='talla' id='talla'></b></div>
-  <div class="item5"><b>* Peso: <input type='text' name='peso' id='peso'></b> </div>
+  <div class="item2"><b>* Edad: <input type='text' name='edad' id='edad' ></b> </div>
+  <div class="item3"><b>* Sexo: <input type='text' name='sexo' id='sexo' disabled></b> </div>  
+  <div class="item4"><b>* Talla: <input type='text' name='talla' id='talla' disabled></b></div>
+  <div class="item5"><b>* Peso: <input type='text' name='peso' id='peso' disabled></b> </div>
   <div class="item6"></div>
   
   </div>
+  </div>
+
+  <div id=va3>
+
   </div>
 
   <div id="idpa1">
@@ -261,11 +438,14 @@ $('#capa').hide();
   </div>
 
   <div id="idpa3">Agudez visual
-      <br>{!! $errors->first('','<span class=error>:message</span>')!!}
-      <input type="text" name="visual" id="visual" value="">  
+  
+  <input type="text" style="text-transform:uppercase;"  name="visual" id="visual" value="" onkeyup="javascript:this.value=this.value.toUpperCase();">  
           
   </div>  
   </div>
+
+  <div id="va4">
+  </div>  
     
   <div align="center">
 
