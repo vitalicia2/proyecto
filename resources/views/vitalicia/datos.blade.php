@@ -336,14 +336,7 @@ $('#capa').hide();
             $('#va5').show();   
             $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>')     
           }
-          if ($("#ale").val() =="")
-          {
-            $('#agrega').prop("disabled",true); 
-            $('#va5').show();
-            $('#va5').html('<small style="color:red;">debes llenar todos los campos </small>') 
-             
-              
-          }
+          
           
           
       });
