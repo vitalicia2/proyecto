@@ -386,6 +386,7 @@ $('#capa').hide();
             $('#tipa').hide();
             $('.obser').hide();
             $('#capa').hide("");
+            $('#agrega').prop("disabled",true);
 
         
          
