@@ -15,9 +15,17 @@
   @if(Session::get('sesiontipo')=="1")
     <li class="tabs-title"><a href="#medicamentos">Medicamentos</a></li>
   @endif
+
   @if(Session::get('sesiontipo')=="1")
     <li class="tabs-title"><a href="#Npacientes">Pacientes</a></li>
   @endif
+  
+  @if(Session::get('sesiontipo')=="1")
+    <li class="tabs-title"><a href="#Ndadetalle">Datos  Generales</a></li>
+  @endif
+  <!--@if(Session::get('sesiontipo')=="1")
+    <li class="tabs-title"><a href="#Ndetalle">el otro</a></li>
+  @endif-->
   
 </ul>
 
@@ -249,6 +257,85 @@
         </table>
     </div>
     </div>
+
+
+  <!--Contenido de la Tab 6-->
+  <!--
+<div class="tabs-panel" id="Ndetalle">
+  <div class="table-scroll">
+        <table class="hover">
+            <tr>
+
+<th>Clave</th><th>Paciente</th><th>Fecha y Hora de registro</th>Realizar Consulta<th></th></tr>
+
+            @foreach($resultado as $rdt)
+                <tr>
+                    <td>{{$rdt->ida}}</td>
+                    <td>{{$rdt->paciente}}</td>
+                    <td>{{$rdt->created_at}}</td>
+
+                    <td>
+                    <a href="{{URL::action('modulo2@obtenerdatos',['ida'=>$rdt->ida])}}">
+                    <button type="button" class="button small success">Buscar</button>
+                    </a> 
+                    </td>
+                    
+                </tr>
+            @endforeach
+        </table>
+    </div>
+    </div>-->
+
+    <!--Contenido de la Tab 7-->
+<div class="tabs-panel" id="Ndadetalle">
+  <div class="table-scroll">
+        <table class="hover">
+            <tr>
+
+<th>Clave</th>
+<th>Paciente</th>
+<th>Fecha</th>
+<th>Edad</th>
+<th>Sexo</th>
+<th>Talla</th>
+<th>Peso</th>
+<th>TA</th>
+<th>FC</th>
+<th>FR</th>
+<th>Grupo sanguineo</th>
+<th>Agudeza Visual</th>
+<th>Alergia</th>
+<th>Tipo de Alergia</th>
+<th>Observaciones</th>
+</tr>
+
+            @foreach($datosdeta as $dat)
+                <tr>
+                    <td>{{$dat->ida}}</td>
+                    <td>{{$dat->paciente}}</td>
+                    <td>{{$dat->created_at}}</td>
+                    <td>{{$dat->edad}}</td>
+                    <td>{{$dat->sexo}}</td>
+                    <td>{{$dat->talla}}</td>
+                    <td>{{$dat->peso}}</td>
+                    <td>{{$dat->ta}}</td>
+                    <td>{{$dat->fc}}</td>
+                    <td>{{$dat->fr}}</td>
+                    <td>{{$dat->grupsan}}</td>
+                    <td>{{$dat->aguvi}}</td>
+                    <td>{{$dat->alergia}}</td>
+                    <td>{{$dat->tipalergia}}</td>
+                    <td>{{$dat->observaciones}}</td>
+
+                    
+                    </td>
+                    
+                </tr>
+            @endforeach
+        </table>
+    </div>
+    </div>
+
 
    
 

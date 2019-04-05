@@ -23,6 +23,7 @@ use App\npacientes;
 use App\detalles;
 use App\datos;
 use Session;
+use App\datosdetalles;
 
 
 
@@ -68,6 +69,10 @@ class vitalicia extends Controller
         INNER JOIN alimentaciones AS al ON al.`idalimentacion`=p.`idalimentacion`");
 
         $medicam = amedicamentos::withTrashed()->orderBy('idamedicamento','asc')->get();
+
+        $resultado =\DB::select("SELECT ida,paciente,created_at FROM datosdetalles ORDER BY ida ASC");
+
+        $datosdeta =\DB::select("SELECT * FROM datosdetalles ORDER BY ida ASC");
             
      
             return view ('vitalicia.home')
@@ -76,6 +81,8 @@ class vitalicia extends Controller
             ->with('medicam',$medicam)
             ->with('npacientes',$npacientes)
             ->with('mispa',$mispa)
+            ->with('resultado',$resultado)
+            ->with('datosdeta',$datosdeta)
             ->with('pacientesd',$pacientesd);
         }
         else
