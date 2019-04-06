@@ -155,13 +155,67 @@
 }
 </style>
 
+<style>
+.grid-11 {
+  display: grid;
+  grid-template-columns: 225px 300px 300px 300px ;
+  grid-gap: 10px;
+  padding: 1px;
+}
+
+.grid-11 > div {
+  text-align: center;
+}
+
+.item1 {
+  grid-column: 0 / 4;
+}
+</style>
+
+<style>
+.grid-10 {
+  display: grid;
+  grid-template-columns: 225px 300px 300px 300px ;
+  grid-gap: 10px;
+  padding: 1px;
+}
+
+.grid-10 > div {
+  text-align: center;
+}
+
+.item1 {
+  grid-column: 0 / 4;
+}
+</style>
+
+<style>
+.grid-12 {
+  display: grid;
+  grid-template-columns: 1px 310px 110px 190px  80px 300px;
+  grid-gap: 10px;
+  padding: 1px;
+}
+
+.grid-12 > div {
+  text-align: center;
+}
+
+.item1 {
+  grid-column: 0 / 5;
+}
+</style>
+
+
+
+
   </head>
   <body>
     
     <div class="top-bar">
       <div class="row">
         <div class="top-bar-left">
-	       <a class="navbar-brand" href="{{route('home')}}"><img src="vitalicia.jpg" width="70" height="200" alt="Vitalicia"></a> 
+	       <a class="navbar-brand" href="{{route('home')}}"><img src="../vitalicia.jpg" width="70" height="200" alt="Vitalicia"></a> 
         </div>
           
 
