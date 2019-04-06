@@ -155,6 +155,14 @@ Route::get('imprimir', 'modulos@imprimir')->name('imprimir');
 
 
 
+//RUTA PARA MODULO CITAS
+
+
+//CITAS
+Route::get('/agendar','ControlCitas@cita')->name('citas');
+Route::get('/combocahorario','ControlCitas@combocahorario')->name('combocahorario');
+Route::POST('/confirma','ControlCitas@confirma')->name('oki');
+//
 
 
 

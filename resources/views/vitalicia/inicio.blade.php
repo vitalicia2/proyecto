@@ -51,6 +51,7 @@
 		            <li><a href="#" data-nav-section="nosotros"><span>Nosotros</span></a></li>
 		            <li><a href="#" data-nav-section="servicios"><span>Servicios</span></a></li>
 		            <li><a href="#" data-nav-section="contacto"><span>Contacto</span></a></li>
+                    <li><a href="{{URL::action('ControlCitas@cita')}}">Agendar Cita</a></li>
                     <li><a href="{{URL::action('vitalicia@galeria')}}" data-nav-section="gallery"><span>Galer&iacute;a</span></a></li>
                     <li><a href="{{URL::action('usuariosc@login')}}"><span>Iniciar Sesión</span></a></li>
 		          </ul>
@@ -345,44 +346,8 @@
                     </li></h3></ul>
                        <div class="row">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1026.864827276789!2d-99.53832028494408!3d19.25814157636629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdf4ce3d4fa411%3A0x8fdc2e4c71229c5c!2sJos%C3%A9+Vicente+Villada+Pte.+620%2C+San+Francisco%2C+52104+San+Mateo+Atenco%2C+M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1544402478420" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>          
-                        </div>
-                        <!--div class="row">
-                            <h3><strong>Escr&iacute;benos tu comentarios</strong></h3>
-                        </div>    
-                        <div class="row" class="col-md-6">
-                            <form action="mail/send.php" method="post">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name" class="sr-only">Nombre</label>
-                                        <input placeholder="Nombre" name="name" type="text" required class="form-control input-lg">
-                                    </div>	
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="email" class="sr-only">E-mail</label>
-                                        <input placeholder="E-mail" name="email" type="text" required class="form-control input-lg">
-                                    </div>	
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="subject" class="sr-only">Asunto</label>
-                                        <input type="text" name="subject" placeholder="¿Cuál es el motivo de su mensaje?" required  class="form-control input-lg">
-                                    </div>	
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="message" class="sr-only">Mensaje</label>
-                                        <textarea placeholder="Su mensaje" name="message" class="form-control input-lg" rows="3" required></textarea>
-                                    </div>	
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-primary " value="Enviar">
-                                            <input type="reset" class="btn btn-outline  " value="Borrar">
-                                        </div>	
-                                    </div>
-                                </form>	
-                            </div-->
+                        </div> 
+                        
                         </div>
                    </div>
               </div>            
