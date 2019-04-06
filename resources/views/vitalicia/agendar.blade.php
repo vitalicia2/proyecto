@@ -185,7 +185,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                 ¿Cuál es su relación con el paciente?   <select name='relacion' id='relacion' class="form-control input-lg">
-                                                        <option>Seleccione una opci&oacute;n</option>
+                                                        <option></option>
                                                         <option>Abuelo/a</option>
                                                         <option>Padre</option>
                                                         <option>Madre</option>
@@ -342,7 +342,7 @@
                             <div class="form-group">
                                 Estado donde recide el paciente
                                         <select name = 'estado' id= 'estado' class="form-control input-lg">
-                                            <option>Seleccione una Opci&oacute;n</option>
+                                            <option></option>
                                             <option>Aguascalientes</option>
                                             <option>Baja California</option>
                                             <option>Baja California Sur</option>
