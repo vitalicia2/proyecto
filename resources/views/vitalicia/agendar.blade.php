@@ -78,9 +78,19 @@
                 {
                    $('#solicitar').show();
                    $('#ok').hide();
-                    var foli = $("input[name='idcitas']").val();
-                        alert("GUARDE SU FOLIO ANTES DE CONTINUAR: " + foli);
-                });    
+                    var foli = $("input[name='folio']").val();
+                    var foli2 = $("input[name='idcitas']").val();        
+                
+                        if (foli == '')
+                            {
+                                alert("GUARDE SU FOLIO ANTES DE CONTINUAR: " + foli2);
+                            }
+                
+                        else
+                            {
+                                alert("GUARDE SU FOLIO ANTES DE CONTINUAR: " + foli);
+                            }
+                });     
     
 
                 
