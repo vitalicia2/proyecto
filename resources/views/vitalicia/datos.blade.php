@@ -429,7 +429,7 @@ $('#capa').hide();
   <div> Licenciado(a)
   <select name = 'idc' id= 'idc'> 
             @foreach($cuida as $cui)
-            <option value = '{{$cui->idcuidador}}'>{{$cui->nombre}}</option>
+            <option value = '{{$cui->idu}}'>{{$cui->usuario}}</option>
             @endforeach
             </select>
           

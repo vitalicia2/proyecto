@@ -10,6 +10,7 @@ use App\cuidadores;
 use App\datosdetalles;
 use App\detalles;
 use App\datotes;
+use App\usuarios;
 use Session;
 use Carbon\Carbon;
 use Jenssegers\Date\Date;
@@ -74,7 +75,8 @@ class modulos extends Controller
           $ida = $clavequesigue[0]->ida+1;   
          }
     
-          $cuida = cuidadores::all();
+          $cuida = usuarios::all()->where('idt','=','2');
+
           return view('vitalicia.datos')
           ->with('cuida',$cuida)
           ->with('date',$date)
