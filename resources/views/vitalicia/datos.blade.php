@@ -12,7 +12,8 @@
 <head>
     <meta charset="utf-8">
     <title>Modulo DG</title>
-  <script src="{{asset('jquery/jquery-3.3.1.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 
 

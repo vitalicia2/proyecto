@@ -34,7 +34,7 @@ div.round1 {
 
    <div align="right">    <b>Folio: {{$res->ida}} </b> </div>
 
-  <h5> <img src="vitalicia.jpg" width="240" height="100" alt="Vitalicia">
+  <h5> <img src="http://www.vitalicia.com.mx/vitalicia.jpg" width="240" height="100" alt="Vitalicia">
   <font color="#5B696A">Aviso de privacidad / Copyright / © Derechos reservados  2019 | Vitalicia.</font></h5>
 
 <div id="header" >
