@@ -58,19 +58,50 @@
                });
 
             $("#otro").click(function() {
-                 $('#datosotros').show(); 
+                 $('#datosotros').show();
+                 $('#appotro').prop("required", true);
+                 $('#apmotro').prop("required", true);
+                 $('#nombreotro').prop("required", true);
+                 $('#direotro').prop("required", true);
+                 $('#cpotro').prop("required", true);
+                 $('#ciudadotro').prop("required", true);
+                 $('#municipiootro').prop("required", true);
+                 $('#telotro').prop("required", true);
+                 $('#correootro').prop("required", true);
+                 
+                var rela = $("#relacion option:selected").val();
+                    if (rela == '')
+                            {
+                                $('#relacion').prop("required", true);
+                            }
                });
 
             $("#si").click(function() {
                  $('#nopaciente').hide();
                  $('#sipaciente').show();
                  $('#paciente').hide();
+                 $('#folio').prop("required", true);
                });
 
             $("#no").click(function() {
                  $('#nopaciente').show();
                  $('#sipaciente').hide();
                  $('#paciente').show();
+                 $('#app').prop("required", true);
+                 $('#apm').prop("required", true);
+                 $('#nombrepaciente').prop("required", true);
+                 $('#ciudad').prop("required", true);
+                 $('#direccion').prop("required", true);
+                 $('#cp').prop("required", true);
+                 $('#tlpaciente').prop("required", true);
+                 $('#fnacimiento').prop("required", true);
+                
+                    var state = $("#estado option:selected").val();
+                    if (state == '')
+                            {
+                                $('#estado').prop("required", true);
+                            }
+                
                });
 
 
@@ -159,7 +190,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     Fecha de Cita
-                            <input type="date" name="fecha" id='fecha' min="2019-03-18" max="2019-12-31" class="form-control input-lg">
+                            <input type="date" name="fecha" id='fecha' min="2019-03-18" max="2019-12-31" class="form-control input-lg" required>
                 </div>
             </div>
             <!---------------------->
