@@ -73,6 +73,19 @@ class vitalicia extends Controller
         $resultado =\DB::select("SELECT ida,paciente,created_at FROM datosdetalles ORDER BY ida ASC");
 
         $datosdeta =\DB::select("SELECT * FROM datosdetalles ORDER BY ida ASC");
+
+
+        $citas=\DB::select("SELECT  ci.`idcitas` AS 'clave',IFNULL(ci.`fecha`, 'No proporcionado') AS 'fecha',IFNULL(ci.`hora`, 'No proporcionado') AS 'hora',
+        IFNULL(ci.horaturno, 'No proporcionado') AS 'horaturno',IFNULL(ci.persona, 'No proporcionado') AS persona,
+        IFNULL(ci.`parentesco`, 'No proporcionado') AS 'parentesco',IFNULL(ci.`appotro`, 'No proporcionado') AS 'appotro',IFNULL(ci.`apmotro`, 'No proporcionado') AS 'apmotro',
+        IFNULL(ci.`nombreotro`, 'No proporcionado') AS 'nombreotro',IFNULL(ci.`direotro`, 'No proporcionado') AS 'direotro',IFNULL(ci.`cpotro`, 'No proporcionado') AS 'cpotro',
+        IFNULL(ci.`ciudadotro`, 'No proporcionado') AS 'cuidadotro',IFNULL(ci.`municipiootro`, 'No proporcionado') AS 'municipiotro',IFNULL(ci.`telotro`, 'No proporcionado') AS 'teleotro',
+        IFNULL(ci.`correootro`, 'No proporcionado') AS 'correotro',IFNULL(ci.`atencion`, 'No proporcionado') AS 'atencion',IFNULL(ci.`folio`, 'No proporcionado') AS 'folio',
+        IFNULL(ci.`trato`, 'No proporcionado') AS 'trato',IFNULL(ci.app, 'No proporcionado') AS 'app',IFNULL(ci.apm, 'No proporcionado') AS 'apm',IFNULL(ci.`nombrepaciente`, 'No proporcionado') AS 'nombrepa',
+        IFNULL(ci.`direccion`, 'No proporcionado') AS 'direcion',IFNULL(ci.`ciudad`, 'No proporcionado') AS 'ciudad',IFNULL(ci.`cp`, 'No proporcionado') AS 'cp',
+        IFNULL(ci.`tlpaciente`, 'No proporcionado') AS 'tlpaciente',IFNULL(ci.`sexo`, 'No proporcionado') AS 'sexo',IFNULL(ci.`fnacimiento`, 'No proporcionado') AS 'fnacimiento',
+        IFNULL(ci.`motivo`, 'No proporcionado') AS 'motivo'
+        FROM citas AS ci");
             
      
             return view ('vitalicia.home')
@@ -83,7 +96,8 @@ class vitalicia extends Controller
             ->with('mispa',$mispa)
             ->with('resultado',$resultado)
             ->with('datosdeta',$datosdeta)
-            ->with('pacientesd',$pacientesd);
+            ->with('pacientesd',$pacientesd)
+            ->with('citas',$citas);
         }
         else
 		 {

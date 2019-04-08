@@ -19,10 +19,17 @@
   @if(Session::get('sesiontipo')=="1")
     <li class="tabs-title"><a href="#Npacientes">Pacientes</a></li>
   @endif
+
+  @if(Session::get('sesiontipo')=="1")
+    <li class="tabs-title"><a href="#Ncitas">citas</a></li>
+  @endif
+ 
   
   @if(Session::get('sesiontipo')=="1")
     <li class="tabs-title"><a href="#Ndadetalle">Datos  Generales</a></li>
   @endif
+
+ 
  
 </ul>
 
@@ -255,6 +262,85 @@
     </div>
     </div>
 
+     <!--Contenido de la Tab 6 citas-->
+<div class="tabs-panel" id="Ncitas">
+  <div class="table-scroll">
+        <table class="hover">
+            <tr>
+
+<th>Clave</th>
+<th>Fecha</th>
+<th>Hora</th>
+<th>Hora de turno</th>
+<th>Persona</th>
+<th>Parentesco</th>
+<th>App Solicitante</th>
+<th>Apm Solicitante</th>
+<th>Nombre del Solicitante</th>
+<th>Dirección Sol</th>
+<th>CP Sol</th>
+<th>Ciudad Sol</th>
+<th>Municipio Sol</th>
+<th>Tel Sol</th>
+<th>Correo Sol</th>
+<th>Atencion</th>
+<th>Folio</th>
+<th>Trato</th>
+<th>App del Paciente</th>
+<th>Apm del Paciente</th>
+<th>Nombre del Paciente</th>
+<th>Dirección Paciente</th>
+<th>Ciudad Paciente</th>
+<th>CP Paciente</th>
+<th>Tel Paciente</th>
+<th>Sexo</th>
+<th>Fecha de Nacimiento</th>
+<th>Motivo</th>
+</tr>
+
+            @foreach($citas as $cit)
+                <tr>
+                    <td>{{$cit->clave}}</td>
+                    <td>{{$cit->fecha}}</td>
+                    <td>{{$cit->hora}}</td>
+                    <td>{{$cit->horaturno}}</td>
+                    <td>{{$cit->persona}}</td>
+                    <td>{{$cit->parentesco}}</td>
+                    <td>{{$cit->appotro}}</td>
+                    <td>{{$cit->apmotro}}</td>
+                    <td>{{$cit->nombreotro}}</td>
+                    <td>{{$cit->direotro}}</td>
+                    <td>{{$cit->cpotro}}</td>
+                    <td>{{$cit->cuidadotro}}</td>
+                    <td>{{$cit->municipiotro}}</td>
+                    <td>{{$cit->teleotro}}</td>
+                    <td>{{$cit->correotro}}</td>
+                    <td>{{$cit->atencion}}</td>
+                    <td>{{$cit->folio}}</td>
+                    <td>{{$cit->trato}}</td>
+                    <td>{{$cit->app}}</td>
+                    <td>{{$cit->apm}}</td>
+                    <td>{{$cit->nombrepa}}</td>
+                    <td>{{$cit->direcion}}</td>
+                    <td>{{$cit->ciudad}}</td>
+                    <td>{{$cit->cp}}</td>
+                    <td>{{$cit->tlpaciente}}</td>
+                    <td>{{$cit->sexo}}</td>
+                    <td>{{$cit->fnacimiento}}</td>
+                    <td>{{$cit->motivo}}</td>
+                    
+                    
+
+                    
+                    </td>
+                    
+                </tr>
+            @endforeach
+        </table>
+    </div>
+    </div>
+
+
 
   
     <!--Contenido de la Tab 7-->
@@ -306,6 +392,9 @@
         </table>
     </div>
     </div>
+
+
+   
 
 
    
