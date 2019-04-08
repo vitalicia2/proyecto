@@ -120,7 +120,7 @@ class modulos extends Controller
           
             $datos = new detalles;
 			$datos->ida = $request->ida;
-			$datos->idcuidador = $request->idc;
+			$datos->idu = $request->idc;
 			$datos->fecha =$request->fecha;
 			$datos->hora =$request->hora;
 			$datos->save();
@@ -235,12 +235,13 @@ class modulos extends Controller
 
   //  ->select(['ida','licenciada','fecha','hora','paciente','edad'])->get();
 
-    $resultado=\DB::select("SELECT de.`ida`,cui.`nombre`AS 'licenciada',de.`fecha`,de.`hora`,dt.`paciente`,
+    $resultado=\DB::select("SELECT de.`ida`,us.`usuario`AS 'licenciada',de.`fecha`,de.`hora`,dt.`paciente`,
     dt.`edad`,dt.`sexo`,dt.`talla`,dt.`peso`,dt.`ta`,dt.`fc`,dt.`fr`,dt.`grupsan` AS 'gruposanguineo',
     dt.`aguvi` AS 'agudezavisual',dt.`alergia`,dt.`tipalergia`,dt.`observaciones`
     FROM datosdetalles AS dt
     INNER JOIN detalles AS de ON de.`ida` = dt.`ida`
-    INNER JOIN cuidadores AS cui ON cui.`idcuidador`=de.`idcuidador`
+    INNER JOIN usuarios AS us ON us.`idu`= de.`idu`
+    WHERE us.`idt`=2
     ORDER BY de.`ida` DESC LIMIT 1");
 
     $date = Carbon::now();
