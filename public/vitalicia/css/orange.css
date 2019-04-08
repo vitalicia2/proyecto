@@ -469,13 +469,13 @@ _______________________________________________________________________________
 }
 
 table, th, td {
-    border: 3px solid DarkOrange;
+    border: 1px solid thistle;
     border-collapse: collapse;
-    width:70%;
+    width:50%;
     text-align: center;
 }
         td {
-    padding: 1px;
+    padding: 2px;
 }
 
 

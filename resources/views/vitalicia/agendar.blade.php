@@ -165,13 +165,19 @@
 				<div class="col-md-12 section-heading text-center">
 					<h2>Agendar Cita</h2>
 				</div>
-        </div>
+                </div>
                
 
   <div class="container">
     <div class="row row-bottom-padded-sm">
         <div class="col-md-12 section-heading text-left">
+                <div class="row">
+                    <h3>Consulta tu cita <a href="{{URL::action('ControlCitas@consulta')}}">aqu&iacute;</a></h3>
+                </div>
+            
         <hr>
+            
+            
         <form action="{{route('oki')}}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
             
@@ -271,7 +277,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                         C&oacute;digo Postal
-                            <input type='text' name ='cpotro' id = 'cpotro' placeholder="CP del Solicitante" class="form-control input-lg">
+                            <input type='text' name ='cpotro' id = 'cpotro' placeholder="CP del Solicitante" class="form-control input-lg" pattern='[0-9]{5}'>
                 </div>
             </div>
             <!---------------------->
@@ -292,14 +298,14 @@
             <div class="col-md-4">
                 <div class="form-group">
                         Tel&eacute;fono de Solicitante
-                            <input type='text' name ='telotro' id = 'telotro' placeholder="Teléfono del Solicitante" class="form-control input-lg">
+                            <input type='text' name ='telotro' id = 'telotro' placeholder="Teléfono del Solicitante" class="form-control input-lg" pattern='[0-9]{10}'>
                 </div>
             </div>
             <!---------------------->
             <div class="col-md-4">
                 <div class="form-group">
                         Correo electr&oacute;nico
-                            <input type='text' name ='correootro' id = 'correootro' placeholder="E-mail del Solicitante" class="form-control input-lg">
+                            <input type='email' name ='correootro' id = 'correootro' placeholder="E-mail del Solicitante" class="form-control input-lg">
                 </div>
             </div>
             <!---------------------->

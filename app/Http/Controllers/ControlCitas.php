@@ -133,34 +133,47 @@ class ControlCitas extends Controller
                     
                     //$cita = $request->folio;
                     //$moti = $request->motivo;
-                    $updated = \DB::update('update citas set fecha=?, hora=?, horaturno=?, persona=?, parentesco=?, appotro=?, apmotro=?, nombreotro=?, direotro=?, cpotro=?, ciudadotro=?, municipiootro=?, telotro=?, correootro=?, motivo=? where idcitas=?',[$fecha, $hora, $horaturno, $persona, $parentesco, $appotro, $apmotro, $nombreotro, $direotro, $cpotro, $ciudadotro, $municipiootro, $telotro, $correootro, $motivo, $folio]);
-                    
-                    
-     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    $updated = \DB::update('update citas set fecha=?, hora=?, horaturno=?, persona=?, parentesco=?, appotro=?, apmotro=?, nombreotro=?, direotro=?, cpotro=?, ciudadotro=?, municipiootro=?, telotro=?, correootro=?, motivo=? where idcitas=?',[$fecha, $hora, $horaturno, $persona, $parentesco, $appotro, $apmotro, $nombreotro, $direotro, $cpotro, $ciudadotro, $municipiootro, $telotro, $correootro, $motivo, $folio]);  
                     
                 }
-            
-                
-                
             
             
              return redirect()->route('inicio');
     }
     
     
+    function consulta()
+        {
+             
+         return view('vitalicia.consultacita');
+        }
+    
+    function cfolio(Request $request)
+        {
+         
+        $consul = $request->get('consult');
+    
+        //$fcons = $request->consult;
+        //$thoras = thoras::where('idcitas','=',$idhc)->get();
+
+        //$resultado=\DB::select("SELECT idcitas,fecha,hora,horaturno FROM citas WHERE idcitas= ?",[$consul]);
+        
+        $resultado=\DB::select("SELECT  ci.idcitas, ci.fecha, th.hora AS hora,
+        ch.tipo AS horaturno FROM citas AS ci 
+        INNER JOIN thoras AS th ON th.idhora = ci.hora
+        INNER JOIN chorarios AS ch ON ch.idhc = ci.horaturno WHERE ci.idcitas=?",[$consul]);
+    
+       return view ('vitalicia.listafolio')
+       ->with('resultado',$resultado)
+           ->with('consul',$consul);
+        }
+    
+    
+    function resultadocita()
+        {
+             
+         return view('vitalicia.listafolio');
+        }
     
     
     
