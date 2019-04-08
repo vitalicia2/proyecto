@@ -16,16 +16,16 @@
     <li class="tabs-title"><a href="#medicamentos">Medicamentos</a></li>
   @endif
 
-  @if(Session::get('sesiontipo')=="1")
+  @if(Session::get('sesiontipo')=="1" or "2")
     <li class="tabs-title"><a href="#Npacientes">Pacientes</a></li>
   @endif
 
-  @if(Session::get('sesiontipo')=="1")
-    <li class="tabs-title"><a href="#Ncitas">citas</a></li>
+  @if(Session::get('sesiontipo')=="1" or "2")
+    <li class="tabs-title"><a href="#Ncitas">Citas</a></li>
   @endif
  
   
-  @if(Session::get('sesiontipo')=="1")
+  @if(Session::get('sesiontipo')=="1" or "2")
     <li class="tabs-title"><a href="#Ndadetalle">Datos  Generales</a></li>
   @endif
 
