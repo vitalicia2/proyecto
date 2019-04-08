@@ -75,8 +75,8 @@ class vitalicia extends Controller
         $datosdeta =\DB::select("SELECT * FROM datosdetalles ORDER BY ida ASC");
 
 
-        $citas=\DB::select("SELECT  ci.`idcitas` AS 'clave',IFNULL(ci.`fecha`, 'No proporcionado') AS 'fecha',IFNULL(ci.`hora`, 'No proporcionado') AS 'hora',
-        IFNULL(ci.horaturno, 'No proporcionado') AS 'horaturno',IFNULL(ci.persona, 'No proporcionado') AS persona,
+        $citas=\DB::select("SELECT  ci.`idcitas` AS 'clave',IFNULL(ci.`fecha`, 'No proporcionado') AS 'fecha',IFNULL(th.`hora`, 'No proporcionado') AS 'hora',
+        IFNULL(ch.`tipo`, 'No proporcionado') AS 'horaturno',IFNULL(ci.persona, 'No proporcionado') AS persona,
         IFNULL(ci.`parentesco`, 'No proporcionado') AS 'parentesco',IFNULL(ci.`appotro`, 'No proporcionado') AS 'appotro',IFNULL(ci.`apmotro`, 'No proporcionado') AS 'apmotro',
         IFNULL(ci.`nombreotro`, 'No proporcionado') AS 'nombreotro',IFNULL(ci.`direotro`, 'No proporcionado') AS 'direotro',IFNULL(ci.`cpotro`, 'No proporcionado') AS 'cpotro',
         IFNULL(ci.`ciudadotro`, 'No proporcionado') AS 'cuidadotro',IFNULL(ci.`municipiootro`, 'No proporcionado') AS 'municipiotro',IFNULL(ci.`telotro`, 'No proporcionado') AS 'teleotro',
@@ -85,7 +85,9 @@ class vitalicia extends Controller
         IFNULL(ci.`direccion`, 'No proporcionado') AS 'direcion',IFNULL(ci.`ciudad`, 'No proporcionado') AS 'ciudad',IFNULL(ci.`cp`, 'No proporcionado') AS 'cp',
         IFNULL(ci.`tlpaciente`, 'No proporcionado') AS 'tlpaciente',IFNULL(ci.`sexo`, 'No proporcionado') AS 'sexo',IFNULL(ci.`fnacimiento`, 'No proporcionado') AS 'fnacimiento',
         IFNULL(ci.`motivo`, 'No proporcionado') AS 'motivo'
-        FROM citas AS ci");
+        FROM citas AS ci
+        INNER JOIN thoras AS th ON th.`idhora`=ci.`hora`
+        INNER JOIN chorarios AS ch ON ch.`idhc`=ci.`horaturno`");
             
      
             return view ('vitalicia.home')
