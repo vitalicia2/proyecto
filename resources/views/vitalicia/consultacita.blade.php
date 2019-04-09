@@ -122,7 +122,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             Folio de Cita
-                                <input type = 'text' name = 'consult' id= 'consult' class="form-control input-lg">
+                                <input type = 'text' name = 'consult' id= 'consult' class="form-control input-lg" pattern='[0-9]{5}'>
                         </div>
                     </div>
                     <!---------------------->
