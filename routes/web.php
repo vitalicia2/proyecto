@@ -1,8 +1,5 @@
 <?php
 
-use App\citas;
-use App\chorarios;
-use App\thoras;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -165,12 +162,12 @@ Route::get('imprimir', 'modulos@imprimir')->name('imprimir');
 Route::get('/agendar','ControlCitas@cita')->name('citas');
 Route::get('/combocahorario','ControlCitas@combocahorario')->name('combocahorario');
 Route::POST('/confirma','ControlCitas@confirma')->name('oki');
-
-Route::get('/consulta','ControlCitas@consulta')->name('consulta');
-Route::POST('/cfolio','ControlCitas@cfolio')->name('cfolio');
-Route::get('/busqueda','ControlCitas@resultadocita')->name('resultado');
-
 //
+
+
+Route::get('obtenerdatos/{ida}', 'modulo2@obtenerdatos')->name('obtenerdatos');
+
+
 
 
 

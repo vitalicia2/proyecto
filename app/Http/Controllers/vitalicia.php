@@ -1116,8 +1116,7 @@ class vitalicia extends Controller
     {
         if( Session::get('sesionidu')!="")
 		 {
-           $usuario = usuarios::where('idu','=',$idu)
-                                 ->get();
+           $usuario = usuarios::where('idu','=',$idu)->get();
             $idt = $usuario[0]->idt;
             
             $tipousu = tipos::where('idt','=',$idt)->get();
